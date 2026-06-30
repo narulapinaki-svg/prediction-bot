@@ -2,35 +2,33 @@
 
 ## Overview
 
-This project is a Python bot that queries the resolution state of an active prediction market contract. It connects to the blockchain, retrieves market information, and checks whether the selected prediction market has been resolved.
+This project is a Python bot that queries blockchain data from the Sepolia testnet and uses a Chainlink oracle price feed to determine the outcome of a simulated prediction market.
 
 ## Features
 
-- Query an active prediction market
-- Fetch the current resolution status
-- Display the result in a simple, readable format
-- Built using Python
+- Connects to the Ethereum Sepolia testnet using JSON-RPC
+- Fetches the latest Ethereum block number
+- Retrieves the latest ETH/USD price from the Chainlink Oracle
+- Simulates the resolution of a prediction market based on the oracle price
+- Displays the result in a simple and readable format
 
 ## Technologies Used
 
 - Python 3
-- Web3.py
-- Requests
+- Ethereum Sepolia Testnet
+- Chainlink Oracle
+- Alchemy JSON-RPC API
 
 ## Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/narulapinaki-svg/<YOUR-REPO-NAME>.git
-cd <YOUR-REPO-NAME>
+git clone https://github.com/narulapinaki-svg/<YOUR-REPOSITORY-NAME>.git
+cd <YOUR-REPOSITORY-NAME>
 ```
 
-Install the required dependencies:
-
-```bash
-pip install -r requirements.txt
-```
+This project uses only Python's standard library, so no additional packages need to be installed.
 
 ## Usage
 
@@ -40,14 +38,25 @@ Run the bot using:
 python bot.py
 ```
 
-## Example Output
+## Sample Output
 
 ```text
-Prediction Market Status
-------------------------
-Market ID: 0x...
-Resolved: True
-Outcome: YES
+🤖 Prediction Market Bot
+==================================================
+
+📦 Latest Sepolia Block: 9123456
+
+🔮 Chainlink Oracle — ETH/USD Price Feed
+   Current ETH Price: $3,245.81
+   Oracle Address: 0x694AA1769357215DE4FAC081bf1f309aDC325306
+   Network: Sepolia Testnet
+
+📊 Simulated Prediction Market:
+   Question: Will ETH be above $3000?
+   Resolution: ✅ YES
+
+==================================================
+Bot run complete!
 ```
 
 ## Project Structure
@@ -55,14 +64,15 @@ Outcome: YES
 ```
 .
 ├── bot.py
-├── README.md
-└── requirements.txt
+└── README.md
 ```
 
 ## Objective
 
-This project was developed as part of **Week 3 – Information Economies & Security**. The goal was to build a Python bot capable of querying the resolution state of an active prediction market contract and understanding the role of oracles and prediction markets in blockchain ecosystems.
+This project was developed as part of **Week 3 – Information Economies & Security**.
+
+The objective was to build a Python bot capable of querying blockchain data and using an oracle to determine the resolution state of a prediction market scenario, demonstrating the role of prediction markets and decentralized oracles in blockchain ecosystems.
 
 ## Author
 
-Pinaki Narula
+**Pinaki Narula**
